@@ -20,6 +20,6 @@ jobs:
          ls
       - uses: actions/checkout@v2
       - name: Typecheck
-        working-directory: ./src
+#        working-directory: ./src
         run: |
          ls
