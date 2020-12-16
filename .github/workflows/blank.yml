@@ -23,4 +23,3 @@ jobs:
         working-directory: ./src
         run: |
          ls
-         fmjs Main.fm
