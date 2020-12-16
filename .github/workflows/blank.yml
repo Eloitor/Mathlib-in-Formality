@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm i -g formality-js
+      - run: git clone --depth=1 https://github.com/moonad/formality .
+      - run: rm -rf .git
+      - uses: actions/checkout@v2
+      - name: Typecheck
+        run:  cd src
+      - run: fmjs Main.fm
