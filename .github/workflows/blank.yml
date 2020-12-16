@@ -14,7 +14,7 @@ jobs:
       - run: |
          sudo apt-get update
          sudo apt-get install npm
-         npm i -g formality-js
+         sudo npm i -g formality-js
          git clone --depth=1 https://github.com/moonad/formality .
          rm -rf .git
       - uses: actions/checkout@v2
