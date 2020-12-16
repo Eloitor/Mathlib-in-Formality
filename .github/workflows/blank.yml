@@ -17,6 +17,7 @@ jobs:
          sudo npm i -g formality-js
          git clone --depth=1 https://github.com/moonad/formality .
          rm -rf .git
+         ls
       - uses: actions/checkout@v2
       - name: Typecheck
         run:  cd src
