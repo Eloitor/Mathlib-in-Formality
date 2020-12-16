@@ -20,5 +20,5 @@ jobs:
          ls
       - uses: actions/checkout@v2
       - name: Typecheck
-        run:  cd /src
-      - run: fmjs Main.fm
+        working-directory: src
+        run: fmjs Main.fm
