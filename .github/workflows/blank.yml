@@ -11,6 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: bahmutov/npm-install@v1
       - run: npm i -g formality-js
       - run: git clone --depth=1 https://github.com/moonad/formality .
       - run: rm -rf .git
