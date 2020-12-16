@@ -11,12 +11,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - run: |
          sudo apt-get update
          sudo apt-get install npm
          sudo npm i -g formality-js
          git clone --depth=1 https://github.com/moonad/formality formality
-      - uses: actions/checkout@v2
+         rm -rf formality/.git
       - name: Typecheck
 #        working-directory: ./src
         run: |
