@@ -19,6 +19,7 @@ jobs:
          git clone --depth=1 https://github.com/moonad/formality formality
          rm -rf formality/.git
       - name: Typecheck
-#        working-directory: ./src
+        working-directory: formality/src
         run: |
-         ls
+          ls
+          fmjs Main.fm
