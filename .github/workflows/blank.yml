@@ -22,5 +22,5 @@ jobs:
       - name: Typecheck
         working-directory: formality/src
         run: |
-          find . -name '*.fm' -exec fmjs {} \;
+          fmjs _
 #          fmjs Main.fm
