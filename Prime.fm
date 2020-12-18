@@ -1,0 +1,36 @@
+Prime(p : Nat): Type
+ Pair(Pair((p != 0), (p != 1)), (a: Nat, b: Nat) (((a * b) % p) == 0) -> Either( (a % p) == 0, (b % p) ==0 ))
+
+Prime.notZeroA(p: Nat, hp: Prime(p)): p != 0
+ open hp
+ open hp.fst
+ hp.fst.fst
+
+Prime.notZeroB: Not(Prime(0))
+ (h)
+ open h
+ open h.fst
+ h.fst.fst(refl)
+
+
+Prime.notOneA(p: Nat, hp: Prime(p)): p != 1
+ open hp
+ open hp.fst
+ hp.fst.snd
+
+Prime.notOneB: Not(Prime(1))
+ (h)
+ open h
+ open h.fst
+ h.fst.snd(refl)
+
+Irreducible(p: Nat): Type
+   Pair(p != 1, (a: Nat, b: Nat) (p==a*b) -> Either(a==1, b == 1))
+
+One_not_Irreducible: Not(Irreducible(1))
+ (h)
+ open h
+ h.fst(refl)
+
+ Prime.two: Prime(2)
+  32
