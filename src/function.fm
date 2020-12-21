@@ -1,0 +1,12 @@
+function.comp<A: Type, B: Type, C: Type> (g: B -> C) (f: A -> B) : A -> C
+  (x) g(f(x))
+
+injective<A: Type, B: Type>(f: A -> B): Type
+ (a1: A) (a2: A) (f(a1) == f(a2)) -> (a1 == a2)
+
+injective.comp <A: Type, B: Type, C: Type>
+   ( g: B -> C,
+     f: A -> B,
+    hg: injective<B,C>(g),
+    hf: injective<A,B>(f))  : injective<A,C>(function.comp<A,B,C>(g,f))
+  (x, y, h) hf(__,hg(f(x),f(y),_))
